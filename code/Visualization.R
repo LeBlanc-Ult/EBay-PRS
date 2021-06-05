@@ -10,54 +10,54 @@ library(ggplot2)
 library(ggpubr)
 
 p1 <- ggplot(ACB, aes(x=prs)) + 
-  geom_histogram(aes(y=..density..),      # 这一步很重要,使用density代替y轴
+  geom_histogram(aes(y=..density..),      
                  binwidth=.005,
                  colour="black", fill="white") +
-  geom_density(alpha=.2, fill="#FF6666") +  # 重叠部分采用透明设置
+  geom_density(alpha=.2, fill="#FF6666") + 
   xlab("PRS of ACB x ACB") +
   xlim(-0.1,0.1)
 
 
 p2 <- ggplot(CHS, aes(x=prs)) + 
-  geom_histogram(aes(y=..density..),      # 这一步很重要,使用density代替y轴
+  geom_histogram(aes(y=..density..),      
                  binwidth=.005,
                  colour="black", fill="white") +
-  geom_density(alpha=.2, fill="#FF6666") +  # 重叠部分采用透明设置
+  geom_density(alpha=.2, fill="#FF6666") + 
   xlab("PRS of CHS x CHS")+
   xlim(-0.1,0.1)
 
 p3 <- ggplot(TSI, aes(x=prs)) + 
-  geom_histogram(aes(y=..density..),      # 这一步很重要,使用density代替y轴
+  geom_histogram(aes(y=..density..),      
                  binwidth=.005,
                  colour="black", fill="white") +
-  geom_density(alpha=.2, fill="#FF6666") +  # 重叠部分采用透明设置
+  geom_density(alpha=.2, fill="#FF6666") +  
   xlab("PRS of TSI x TSI")+
   xlim(-0.1,0.1)
 
 
 
 p4 <- ggplot(TSI_ACB, aes(x=prs)) + 
-  geom_histogram(aes(y=..density..),      # 这一步很重要,使用density代替y轴
+  geom_histogram(aes(y=..density..),      
                  binwidth=.005,
                  colour="black", fill="white") +
-  geom_density(alpha=.2, fill="#FF6666") +  # 重叠部分采用透明设置
+  geom_density(alpha=.2, fill="#FF6666") + 
   xlab("PRS of TSI x ACB") +
   xlim(-0.1,0.1)
 
 p5 <- ggplot(TSI_CHS, aes(x=prs)) + 
-  geom_histogram(aes(y=..density..),      # 这一步很重要,使用density代替y轴
+  geom_histogram(aes(y=..density..),      
                  binwidth=.005,
                  colour="black", fill="white") +
-  geom_density(alpha=.2, fill="#FF6666") +  # 重叠部分采用透明设置
+  geom_density(alpha=.2, fill="#FF6666") +  
   xlab("PRS of TSI x CHS") +
   xlim(-0.1,0.1)
 
 
 p6 <- ggplot(ACB_CHS, aes(x=prs)) + 
-  geom_histogram(aes(y=..density..),      # 这一步很重要,使用density代替y轴
+  geom_histogram(aes(y=..density..),    
                  binwidth=.005,
                  colour="black", fill="white") +
-  geom_density(alpha=.2, fill="#FF6666") +  # 重叠部分采用透明设置
+  geom_density(alpha=.2, fill="#FF6666") + 
   xlab("PRS of ACB x CHS") +
   xlim(-0.1,0.1)
 ggarrange(p1,p2,p3,p4,p5,p6,ncol=3,nrow=2,labels=c("A","B","C","D","E","F"))
